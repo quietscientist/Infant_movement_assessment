@@ -268,7 +268,7 @@ def get_joint_angles(df):
     # can include shoulder rotation
     df_2['bp'] = df_2['bp0']
 
-    df_info = df.groupby(['video', 'frame', 'fps','time', 'delta_t']).mean().reset_index()[['video', 'frame', 'fps','time', 'delta_t']]
+    df_info = df.groupby(['video', 'frame', 'fps','time', 'delta_t']).mean(numeric_only=True).infer_objects(copy=False).reset_index()[['video', 'frame', 'fps','time', 'delta_t']]
     df_angle = pd.merge(df_2[['video', 'frame', 'bp', 'side', 'part', 'angle']],\
     df_info, on=['video', 'frame'], how='inner').drop_duplicates()
     return df_angle
