@@ -54,10 +54,10 @@ def main():
     clin = clin.drop(['session', 'trial'], axis=1)
     yt = yt.drop('infant_id', axis=1)
 
-    features = clin.append(yt)
+    features = pd.concat([clin, yt], ignore_index=True)
     features = features.set_index(['video','category', 'infant', 'age_in_weeks', 'risk']).reset_index()
     # average across rows for same infant
-    features = features.groupby('infant').mean().reset_index()
+    features = features.groupby('infant').mean(numeric_only=True).reset_index()
 
     id_vars = ['infant', 'category','age_in_weeks', 'risk']
     # pivot dataframe
@@ -70,8 +70,8 @@ def main():
     part =pd.Series([ i[-1:][0][1:] if i[0]!='lrCorr' else i[-1:][0] for i in feature_str])
     feature = pd.Series(['_'.join(i[:-1]) for i in feature_str])
     feature_attributes = pd.DataFrame.from_dict({'side': side, 'part': part, 'feature_name': feature})
-    features[['feature_name', 'part', 'side']] = feature_attributes
-    features = features.groupby(['infant', 'part','feature_name']).mean().reset_index()
+    features[['side', 'part', 'feature']] = feature_attributes
+    features = features.groupby(['infant', 'part','feature']).mean(numeric_only=True).reset_index()
     features.to_pickle(os.path.join(save_path, 'features_merged.pkl'))
     
 if __name__== '__main__':

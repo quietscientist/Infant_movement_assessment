@@ -11,12 +11,12 @@ def main(path):
     features = pd.read_pickle(os.path.join(path,'features_merged.pkl'))
 
     ref_stats = pd.DataFrame()
-    ref_stats = features[features.category ==0].groupby(['feature_name','age_bracket', 'part'])['Value']\
+    ref_stats = features[features.category ==0].groupby(['feature','age_bracket', 'part'])['Value']\
     .apply(norm.fit).reset_index()
     ref_stats[['mean_ref', 'sd_ref']] = ref_stats['Value'].apply(pd.Series)
     ref_stats['var_ref'] = ref_stats['sd_ref']**2
     ref_stats = ref_stats.reset_index().drop('Value', axis=1)
-    features = pd.merge(features,ref_stats, on=['feature_name','age_bracket', 'part'], how='inner')
+    features = pd.merge(features,ref_stats, on=['feature','age_bracket', 'part'], how='inner')
     features['minus_log_pfeature'] = -1*(.5*np.log(2*np.pi*features['var_ref']) + ((features['Value']-features['mean_ref'])**2)/(2*features['var_ref']))
     features['feature'] = features.part +'_'+ features.feature_name
 
