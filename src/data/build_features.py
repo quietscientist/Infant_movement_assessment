@@ -92,7 +92,7 @@ def main(data_set):
     feature_angle = pd.merge(feature_angle,corr_joint, on='video', how='outer')
     # xy features
     bps = ['LAnkle', 'RAnkle', 'LWrist', 'RWrist']
-    feature_xy = xdf[np.isin(xdf.bp, bps)].groupby(['bp','video']).apply(xy_features)
+    feature_xy = xdf[np.isin(xdf.bp, bps)].groupby(['bp','video']).apply(xy_features).reset_index(drop=True)
     feature_xy = pd.pivot_table(feature_xy, index='video', columns=['bp'])
     l0 = feature_xy.columns.get_level_values(1)
     l1 = feature_xy.columns.get_level_values(0)
