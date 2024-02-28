@@ -70,9 +70,9 @@ def corr_lr(df, var):
     return idf.corr().loc['L','R']
 
 
-def main(data_set):
-    pose_estimates_path = '../data/pose_estimates/'+data_set+'/py'
-    feature_path = '../data/interim'
+def main(data_set, data_path):
+    pose_estimates_path = f'{data_path}/pose_estimates/'+data_set+'/py'
+    feature_path = f'{data_path}/interim'
 
     xdf = pd.read_pickle(os.path.join(pose_estimates_path, 'processed_pose_estimates_coords.pkl'))
     adf = pd.read_pickle(os.path.join(pose_estimates_path, 'processed_pose_estimates_angles.pkl'))
