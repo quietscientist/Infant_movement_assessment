@@ -6,7 +6,7 @@ import sys
 try:
     sys.path.insert(0,'../modules')
 except:
-    sys.path.insert(0,'../modules')
+    sys.path.insert(0,'./modules')
 import circstats as CS
 import scipy as sc
 

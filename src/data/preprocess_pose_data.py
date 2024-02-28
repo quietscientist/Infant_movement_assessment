@@ -2,8 +2,8 @@ import sys
 try:
     sys.path.insert(0,'../modules')
 except:
-    sys.path.insert(0,'../modules')
-    
+    sys.path.insert(0,'./modules')
+
 import pandas as pd
 import os
 from util_data import get_fps, read_video,load_raw_pkl_files, get_skel, edit_df, interpolate_df, smooth, comp_joint_angle, comp_center_joints, normalise_skeletons, get_joint_angles, angular_disp, get_angle_displacement, smooth_dyn, get_delta, get_dynamics_xy, get_dynamics_angle

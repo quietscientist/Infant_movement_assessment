@@ -2,7 +2,7 @@ import sys
 try:
     sys.path.insert(0,'../modules')
 except:
-    sys.path.insert(0,'../modules')
+    sys.path.insert(0,'./modules')
 
 import pandas as pd
 import os
