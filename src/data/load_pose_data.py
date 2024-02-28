@@ -1,5 +1,9 @@
 import sys
-sys.path.insert(0,'../modules')
+try:
+    sys.path.insert(0,'../modules')
+except:
+    sys.path.insert(0,'../modules')
+
 import pandas as pd
 import os
 

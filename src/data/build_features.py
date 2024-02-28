@@ -3,7 +3,10 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import sys
-sys.path.insert(0,'../src/modules')
+try:
+    sys.path.insert(0,'../modules')
+except:
+    sys.path.insert(0,'../modules')
 import circstats as CS
 import scipy as sc
 
