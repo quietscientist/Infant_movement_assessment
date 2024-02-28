@@ -2,7 +2,16 @@
 
 <img src='image/pose_estimates.png' align="middle">
 
+Run it on google colab! 
+
+|   | Run | View |
+| - | --- | ---- |
+| IEEE2020 Figures | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/quietscientist/Infant_movement_assessment/blob/master/notebooks/IEEE2020.ipynb) | [![View the notebook](https://img.shields.io/badge/render-nbviewer-orange.svg)](https://nbviewer.org/github/quietscientist/Infant_movement_assessment/blob/master/notebooks/IEEE2020.ipynb?flush_cache=true) |
+
+
+
 ## Project Contributors
+Melanie Segado msegado@seas.upenn.edu
 Claire Chambers clairenc@seas.upenn.edu   
 Nidhi Seethapathi snidhi@seas.upenn.edu  
 Rachit Saluja rsaluja@seas.upenn.edu  
