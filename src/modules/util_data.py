@@ -13,6 +13,9 @@ def get_fps(videoname):
     return clip.fps
 
 def read_video(video):
+    np.float = np.float64
+    np.int = np.int_
+
     videogen = skvideo.io.vreader(video)
     new_videogen = itertools.islice(videogen, 0, 1, 1)
     for image in new_videogen:
@@ -72,7 +75,7 @@ def load_raw_pkl_files(path):
     df_pkl = pd.DataFrame()
     for file in pklfiles:
         one_file = pd.read_pickle(file).reset_index().drop('index',axis = 1)
-        df_pkl = df_pkl.append(one_file)
+        df_pkl = pd.concat([df_pkl, one_file])
     df_pkl = df_pkl.reset_index().drop('index', axis = 1)
     return df_pkl
 
