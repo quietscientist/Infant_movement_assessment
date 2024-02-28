@@ -8,13 +8,14 @@ from moviepy.editor import VideoFileClip
 import itertools
 import skvideo.io
 
+np.float = np.float64
+np.int = np.int_
+
 def get_fps(videoname):
     clip = VideoFileClip(videoname)
     return clip.fps
 
 def read_video(video):
-    np.float = np.float64
-    np.int = np.int_
 
     videogen = skvideo.io.vreader(video)
     new_videogen = itertools.islice(videogen, 0, 1, 1)
@@ -271,7 +272,7 @@ def get_joint_angles(df):
     # can include shoulder rotation
     df_2['bp'] = df_2['bp0']
 
-    df_info = df.groupby(['video', 'frame', 'fps','time', 'delta_t']).mean(numeric_only=True).infer_objects(copy=False).reset_index()[['video', 'frame', 'fps','time', 'delta_t']]
+    df_info = df.groupby(['video', 'frame', 'fps','time', 'delta_t']).mean(numeric_only=True).reset_index()[['video', 'frame', 'fps','time', 'delta_t']]
     df_angle = pd.merge(df_2[['video', 'frame', 'bp', 'side', 'part', 'angle']],\
     df_info, on=['video', 'frame'], how='inner').drop_duplicates()
     return df_angle
