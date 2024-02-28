@@ -2,10 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 
-def main():
-    feature_path = '../data/interim'
-    meta_data_path = '../data/video_meta_data'
-    save_path = '../data/processed'
+def main(feature_path, meta_data_path, save_path, age_threshold):
+
 
     age_threshold = 10
 

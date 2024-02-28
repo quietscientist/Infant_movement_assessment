@@ -69,6 +69,23 @@ class Skeleton:
         'IQR ankle accel x','IQR wrist accel x','IQR ankle accel y','IQR wrist accel y',\
         'IQR knee angle accel','IQR elbow angle accel']
 
+        self. feature_list_angle = ['Knee_mean_angle','Elbow_mean_angle','Knee_stdev_angle', 'Elbow_stdev_angle',\
+        'Knee_entropy_angle', 'Elbow_entropy_angle','Knee_lrCorr_angle', 'Elbow_lrCorr_angle',\
+        'Knee_median_vel_angle','Elbow_median_vel_angle','Knee_IQR_vel_angle','Elbow_IQR_vel_angle',\
+        'Knee_IQR_acc_angle','Elbow_IQR_acc_angle']
+
+        self.feature_list_x = ['Ankle_medianx','Wrist_medianx','Ankle_mediany','Wrist_mediany',\
+        'Ankle_IQRx', 'Wrist_IQRx','Ankle_IQRy', 'Wrist_IQRy',\
+        'Ankle_meanent', 'Wrist_meanent','Ankle_lrCorr_x', 'Wrist_lrCorr_x',\
+        'Ankle_medianvelx','Wrist_medianvelx','Ankle_medianvely','Wrist_medianvely',\
+        'Ankle_IQRvelx','Wrist_IQRvelx','Ankle_IQRvely','Wrist_IQRvely',\
+        'Ankle_IQRaccx','Wrist_IQRaccx','Ankle_IQRaccy','Wrist_IQRaccy']
+
+        self.feature_list_wrists = ['Wrist_medianx','Wrist_mediany','Wrist_IQRx', 'Wrist_IQRy',\
+        'Wrist_medianvelx', 'Wrist_medianvely','Wrist_IQRvelx', 'Wrist_IQRvely',\
+        'Wrist_IQRaccx', 'Wrist_IQRaccy',\
+        'Wrist_lrCorr_x', 'Wrist_meanent']
+
     def get_colors(self):
         return self.colors
 

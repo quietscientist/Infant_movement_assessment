@@ -40,8 +40,3 @@ def main(path):
     surprise['p'] =(sc.stats.norm.sf(np.abs(surprise['z']))*2).round(3)
     surprise.to_pickle(os.path.join(path, 'bayes_surprise.pkl'))
     features.to_pickle(os.path.join(path, 'final_feature_set.pkl'))
-
-if __name__== '__main__':
-    path = '../data/processed/'
-    main(path)
-    
