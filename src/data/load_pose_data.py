@@ -10,10 +10,10 @@ import os
 from util_data import get_fps, read_video, get_video_information_yt, get_video_information_clinical,load_raw_pkl_files, get_skel, edit_df, interpolate_df, smooth, comp_joint_angle, comp_center_joints, normalise_skeletons, get_joint_angles, angular_disp, get_angle_displacement, smooth_dyn, get_delta, get_dynamics_xy, get_dynamics_angle
 
 
-def main(data_set, raw_pose_estimates_video_path):
+def main(data_set, raw_pose_estimates_video_path, data_path):
 
-    pose_estimates_path = '../data/pose_estimates/'+data_set+'/py'
-    pose_estimate_animation_path = '../data/pose_estimates/'+data_set+'/video'
+    pose_estimates_path = f'{data_path}/pose_estimates/'+data_set+'/py'
+    pose_estimate_animation_path = f'{data_path}/pose_estimates/'+data_set+'/video'
 
     # get video information
     if os.path.exists(os.path.join(pose_estimates_path, 'video_info.pkl'))==0:
