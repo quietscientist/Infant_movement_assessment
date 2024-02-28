@@ -11,7 +11,7 @@ Run it on google colab!
 
 
 ## Project Contributors
-Melanie Segado msegado@seas.upenn.edu
+Melanie Segado msegado@seas.upenn.edu  
 Claire Chambers clairenc@seas.upenn.edu   
 Nidhi Seethapathi snidhi@seas.upenn.edu  
 Rachit Saluja rsaluja@seas.upenn.edu  
