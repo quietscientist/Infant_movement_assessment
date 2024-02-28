@@ -4,9 +4,6 @@ import os
 
 def main(feature_path, meta_data_path, save_path, age_threshold):
 
-
-    age_threshold = 10
-
     # features
     yt = pd.read_pickle(os.path.join(feature_path, 'features_youtube.pkl'))
     clin = pd.read_pickle(os.path.join(feature_path, 'features_clinical.pkl'))
