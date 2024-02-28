@@ -1,11 +1,15 @@
 import sys
-sys.path.insert(0,'../modules')
+try:
+    sys.path.insert(0,'../modules')
+except:
+    sys.path.insert(0,'../modules')
+    
 import pandas as pd
 import os
 from util_data import get_fps, read_video,load_raw_pkl_files, get_skel, edit_df, interpolate_df, smooth, comp_joint_angle, comp_center_joints, normalise_skeletons, get_joint_angles, angular_disp, get_angle_displacement, smooth_dyn, get_delta, get_dynamics_xy, get_dynamics_angle
 
-def main(data_set):
-    pose_estimates_path = '../data/pose_estimates/'+data_set+'/py'
+def main(data_set, data_path):
+    pose_estimates_path = f'{data_path}/pose_estimates/'+data_set+'/py'
     median_window = 1
     mean_window = 1
     delta_window = .25 # smoothing applied to delta_x, velocity, acceleration
